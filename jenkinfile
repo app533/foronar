@@ -9,7 +9,7 @@ pipeline {
     stage('SonarQube Analysis') {
       steps {
         withSonarQubeEnv('SonarQube') {
-          sh 'sonar-scanner -sonar.projectKey=java-jenkins-sonar -sonar.sources=. -sonar.host.url=http://3.230.119.200:9000 -sonar.login=admin -sonar.password=admin'
+          sh 'sonar-scanner -sonar.projectKey=jenkins-sonar -sonar.sources=. -sonar.host.url=http://3.230.119.200:9000 -sonar.login=admin -sonar.password=admin'
         }
       }
     }
