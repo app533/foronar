@@ -2,14 +2,12 @@ pipeline {
   agent any
   stages {
     stage('Checkout') {
-      steps {
-        checkout scm
-      }
+      git 'https://github.com/app533/foronar.git'
     }
     stage('SonarQube Analysis') {
       steps {
         withSonarQubeEnv('SonarQube') {
-         sh 'sonar-scanner -D"sonar.projectKey=java" -D"sonar.sources=." -D"sonar.host.url=http://3.230.119.200:9000" -D"sonar.token=squ_2c262fa80555964eb9c30656a5f74c7512f10e26"'
+         sh 'sonar-scanner -D"sonar.projectKey=java" -D"sonar.sources=." -D"sonar.ho>
         }
       }
     }
